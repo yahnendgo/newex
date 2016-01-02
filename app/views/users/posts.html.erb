@@ -1,0 +1,11 @@
+	<h2>
+		<%= @user.fname %>'s Awesome Posts:
+	</h2>
+	
+	<% @posts.each do |post| %>
+	<h3>
+		<%= link_to post.title, post %>
+	</h3>
+		Subject: <%= post.subject %>
+
+	<% end %>

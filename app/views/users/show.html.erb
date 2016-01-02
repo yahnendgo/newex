@@ -1,0 +1,47 @@
+
+<center>
+
+	<%= image_tag @user.avatar.url(:medium) %>
+		<%= form_for @post, url: posts_path, html:{mulitpart: true} do |f| %>
+		<%= f.label :title, 'Title' %><br>
+		<%= f.text_field :title %><br>
+		<%= f.label :subject, 'Subject' %><br>
+		<%= f.text_field :subject %><br>
+		<%= f.label :body, 'Your Message' %><br>
+		<%= f.text_field :body %><br>
+		<%= f.file_field :avatar %>
+		<br>
+		<%= f.submit 'Post' %>
+		<% end %>
+	<h2>
+		<%= @user.fname %> has a sweet profile. Check it out:
+	</h2>
+	<h3>
+		Name: <%= @user.fname + " " + @user.lname %>
+		<br>
+		Age: <%= @user.age %>
+		<br>
+		Gender: <%= @user.gender %>
+		<br>
+		City: <%= @user.city %>
+		<br>
+		Country: <%= @user.country %>
+		<br>
+		Username: <%= @user.username %>
+		<br>
+		Email: <%= @user.email %>
+		<br>
+	</h3>
+	<h2>
+		<%= @user.fname %>'s Awesome Posts:
+	</h2>
+	
+	<% @top_three_posts.each do |post| %>
+	<h3>
+		<%= link_to post.title, post %>
+	</h3>
+		Subject: <%= post.subject %><br>
+		<br><br>
+	<% end %>
+	
+</center>

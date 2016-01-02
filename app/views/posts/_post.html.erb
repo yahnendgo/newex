@@ -1,0 +1,9 @@
+		<%= image_tag @post.avatar.url(:medium) %>
+	<h3>
+		Title: <%= @post.title %>
+		<br>
+		by: <%= @post.user.fname %>
+	</h3>
+		Subject: <%= @post.subject %>
+		<br>
+		<%= @post.body %>

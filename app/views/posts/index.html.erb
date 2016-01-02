@@ -1,0 +1,20 @@
+	<h2>
+		Here's What Everyone Is Talking About:
+	</h2>
+	
+	<% @posts.each do |post| %>
+	<h3>
+		<%= link_to post.title, post %><br>
+		By: <%= post.user.fname %>
+	</h3>
+		Subject: <%= post.subject %>
+	<h3><u>
+		Comments:
+	</u></h3>
+		<% post.comments.each do |comment| %>
+		<%= comment.user.fname %>
+		<br>
+		<%= comment.comment %>
+		<br><br>
+	<% end %>
+	<% end %>

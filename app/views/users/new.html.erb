@@ -1,0 +1,40 @@
+<center>
+
+<h2>
+	Sign Up!
+</h2>
+
+	<div id="signup">
+	<% @user.errors.full_messages.each do |message| %>
+		<%= message %>
+	<% end %>
+		<%= form_for @user, :html => { :multipart => true } do |f| %>
+		<%= f.label :username, 'Username' %><br>
+		<%= f.text_field :username %><br>
+		<%= f.label :password, 'Password' %><br>
+		<%= f.password_field :password %><br>
+		<%= f.label :password_confirmation, 'Password Confirmation' %><br>
+		<%= f.password_field :password_confirmation %><br>
+		<%= f.label :fname, 'First Name' %><br>
+		<%= f.text_field :fname %><br>
+		<%= f.label :lname, 'Last Name' %><br>
+		<%= f.text_field :lname %><br>
+		<%= f.label :gender, 'Gender' %><br>
+		<%= f.text_field :gender %><br>
+		<%= f.label :age, 'Age' %><br>
+		<%= f.text_field :age %><br>
+		<%= f.label :email, 'Email' %><br>
+		<%= f.text_field :email %><br>
+		<%= f.label :city, 'City' %><br>
+		<%= f.text_field :city %><br>
+		<%= f.label :country, 'Country' %><br>
+		<%= f.text_field :country %><br><br>
+		<%= f.file_field :avatar %>
+
+		<br>
+		<%= f.submit 'Create' %>
+
+		<% end %>	
+	</div>
+
+</center>
