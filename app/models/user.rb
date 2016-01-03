@@ -9,5 +9,15 @@ class User < ActiveRecord::Base
 
 	validates :email, presence: true
 	validates :password, confirmation: true, presence: true
+	validates :gender, inclusion: {in: ["male", "female"]}
 	validates :username, presence: true, uniqueness: { message: "username is already in use"}
+
+	before_validation :regulate_name, on: :create
+ 
+ 
+	def regulate_name
+	    self.name = self.name.downcase.titleize
+	end
+
+
 end
