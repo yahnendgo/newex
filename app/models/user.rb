@@ -16,7 +16,8 @@ class User < ActiveRecord::Base
  
  
 	def regulate_name
-	    self.name = self.name.downcase.titleize
+	    self.fname = self.fname.downcase.titleize
+	    self.lname = self.lname.downcase.titleize
 	end
 
 

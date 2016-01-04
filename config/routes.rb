@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
- get '/index' => 'users#index', as: :home
+  get '/' => 'home#index', as: :home
+
+  get '/index' => 'users#index'
 
 
   get '/search' => 'home#search'
